@@ -7,6 +7,8 @@ int main(int argc, char *argv[]) {
 		return 1;
 	}
 	
+	char CONT[1000];
+
 	char ch;
 	FILE *fp;
 	fp = fopen(argv[1], "r");
@@ -15,6 +17,14 @@ int main(int argc, char *argv[]) {
 		exit(EXIT_FAILURE);
 	}
 
+	fseek(fp, 0, SEEK_END);
+	int size = ftell(fp);
+	fseek(fp, 0, SEEK_SET);
+	if (size > 1000) {
+		printf("File is too big!");
+		return 1;
+	}
+	
 	int IS_ITALIC = 0; // 1 for true, 0 for false
 	int IS_BOLD = 0;
 	char LAST_CHAR;
