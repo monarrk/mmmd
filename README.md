@@ -1,6 +1,9 @@
 # MMMD
 Monarrk's Marvelous Markdown
 
+### Precursor
+I am fully aware that this code is horrendous.
+
 ### Building
 Building is as easy as `cc mmmd.c`.
 
